@@ -3,6 +3,9 @@ body {
 }
 
 form {
+  background-color: white;
+  display: flex;
   border-radius: 40px;
+  font-size: 20px;
   align-items: center;
 }
