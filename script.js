@@ -11,9 +11,12 @@ form.addEventListener("submit", function (event) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ city: city }),
   })
-    .then((res) => res.text()) // get raw response
-    .then((text) => {
-      console.log(text); // see what PHP actually returns
-    })
-    .catch((error) => console.error(error));
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.success) {
+        result_message.innerHTML = `<p>${data.message}</p>`;
+      } else {
+        result_message.innerHTML = `<p>Error: ${data.message}</p>`;
+      }
+    });
 });
