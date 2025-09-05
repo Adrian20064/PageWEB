@@ -3,20 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
+    <title>City input</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <form id="form_input">
-      <h1>Hi, here an input to put your city</h1>
+      <h1>Hi, here's an input to put your city</h1>
       <label for="city_mag">City:</label>
-      <input type="text" id="city-mag" name="city_mag" /><br /><br />
+      <input type="text" id="city-mag" name="city_mag" required /><br /><br />
       <input type="submit" value="Submit" />
     </form>
 
-    <h1>Thanks for the sumission</h1>
+    <p id="response_message"></p>
     <script src="./script.js" async defer></script>
   </body>
 </html>

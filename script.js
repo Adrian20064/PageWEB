@@ -1,5 +1,7 @@
 const form = document.getElementById("form_input");
+const result_message = document.getElementById("result_message");
 
+//for storing city  and result message
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   const city = document.getElementById("city_mag").value;
@@ -11,8 +13,16 @@ form.addEventListener("submit", function (event) {
     },
     body: JSON.stringify({ city: city }),
   })
-    .then(() => {
+    .then((res) => res.json())
+    .then((data) => {
       form.reset();
+      if (data.success) {
+        result_message.innerHTML = `<p>City "${city}" has been stored successfully!</p>`;
+      } else {
+        result_message.innerHTML = `<p>Error: ${data.message}</p>`;
+      }
     })
-    .catch((error) => html`<p>Error: ${error.message}</p>`);
+    .catch(
+      (error) => (result_message.innerHTML = `<p>Error: ${error.message}</p>`)
+    );
 });
