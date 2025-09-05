@@ -1,5 +1,5 @@
 const form = document.getElementById("form_input");
-const result_message = document.getElementById("result_message");
+const result_message = document.getElementById("response_message");
 
 //for storing city  and result message
 form.addEventListener("submit", function (event) {
