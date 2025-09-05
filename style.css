@@ -1,5 +1,10 @@
 body {
   background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
 }
 
 form {
@@ -8,6 +13,6 @@ form {
   border-radius: 40px;
   font-size: 20px;
   align-items: center;
-  margin-left: 60px;
-  width: 100px;
+  width: 300px;
+  padding: 20px;
 }
