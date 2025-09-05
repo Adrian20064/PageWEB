@@ -8,21 +8,12 @@ form.addEventListener("submit", function (event) {
 
   fetch("city_storage.php", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ city: city }),
   })
-    .then((res) => res.json())
-    .then((data) => {
-      form.reset();
-      if (data.success) {
-        result_message.innerHTML = `<p>City "${city}" has been stored successfully!</p>`;
-      } else {
-        result_message.innerHTML = `<p>Error: ${data.message}</p>`;
-      }
+    .then((res) => res.text()) // get raw response
+    .then((text) => {
+      console.log(text); // see what PHP actually returns
     })
-    .catch(
-      (error) => (result_message.innerHTML = `<p>Error: ${error.message}</p>`)
-    );
+    .catch((error) => console.error(error));
 });
